@@ -1,0 +1,139 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500&display=swap'); */
+
+html {
+    height: -webkit-fill-available; /* We have to fix html height */
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    /* width: 100%; */
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Cabin", Helvetica, sans-serif;
+    color: #1c1b1b;
+
+}
+
+header{
+    height: 39vh;
+    background-color: red;
+    text-align: center;
+    color: white;
+    padding: 2em 0 0;
+}
+    /* .burger{
+        position: fixed;
+        top: 0;
+
+        z-index: 100;
+        background-color: var(--header-bg-blue);
+        min-height: 70px;
+        width: 100vw;
+        padding: 1.2em;
+        font-size: 1.2em;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+    } */
+    .nav-toggler{
+        position: fixed;
+        z-index: 100;
+        top: .5em;
+        right: .5em;
+        /* height: 20px;
+        width: 20px; */
+        border-radius: 3px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .6em .8em;
+        /* border: 1px solid #b6b7b8; */
+        outline: 1px solid #b6b7b8;
+    }
+    .line{
+        position: absolute;
+        display: block;
+        width: 12px;
+        height: 1px;
+        background-color: #9a9b9b;
+        transition: transform .3s ease-out, opacity .1s ease-out;
+    
+    }
+    .l1{
+        transform: translateY(-3px);
+    }
+    .l3{
+        transform: translateY(3px);
+    }
+    .nav-toggler.active .l1{  /*animation burger*/
+        transform: translateY(0px) rotate(135deg);
+    }
+    .nav-toggler.active .l3{  /*animation burger*/
+        transform: translateY(0px) rotate(-135deg);
+    }
+    .nav-toggler.active .l2{  /*animation burger*/
+        opacity: 0;
+    }
+
+.nav-curtain{
+    position: fixed;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #303e50d2;
+    width: 100vw;
+    padding: .5em 1.5em 1em;
+    transform: translateY(-100%);
+    transition: transform .3s cubic-bezier(0.073, 0.11, 0.67, .84);
+    
+}
+.nav-curtain.active{
+    transform: translateY(0);
+}
+.nav-curtain a{
+    font-size: .8em;
+    margin-top: 1em;
+    color: white;
+    text-decoration: none;
+    /* transform: 1s; */
+}
+
+@media only screen and (min-width:700px){
+    header{
+        height: 49vh;
+        padding: 2.55em 0 1.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .nav-toggler{
+        padding: .9em 1.2em;
+        top: 1em;
+        right: 1em;
+
+    }
+    .line{
+        width: 16px;
+        height: 1px; 
+    }
+    .l1{
+        transform: translateY(-5px);
+    }
+    .l3{
+        transform: translateY(5px);
+    }
+}
+@media only screen and (min-width:700px){
+    header{height: 40vh; }
+}
